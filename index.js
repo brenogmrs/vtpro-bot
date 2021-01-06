@@ -6,7 +6,7 @@ async function fn () {
     const browser = await puppeteer.launch({ headless:false });
     const page = await browser.newPage();
     
-    await page.goto('http://vtpro.seidorbrasil.com.br/');
+    await page.goto(process.env.VT_PRO_MAIN_URL);
 
     // faz login
     await page.type('#txtUsuario', process.env.VT_PRO_LOGIN);
@@ -14,7 +14,7 @@ async function fn () {
     await page.click('#bntAcessar');
 
     // vai para o lançamento de horas
-    await page.goto('http://vtpro.seidorbrasil.com.br/Conteudo/TimeSheet/Lancamento.aspx');
+    await page.goto(process.env.VT_PRO_TIMESHEET_URL);
 
     const oiToRegister = input.question('OI: ');
 

@@ -12,6 +12,7 @@ async function fn () {
     await page.type('#txtUsuario', process.env.VT_PRO_LOGIN);
     await page.type('#txtSenha', process.env.VT_PRO_PASSWORD);
     await page.click('#bntAcessar');
+    await page.waitForTimeout(2000);
 
     // vai para o lançamento de horas
     await page.goto(process.env.VT_PRO_TIMESHEET_URL);

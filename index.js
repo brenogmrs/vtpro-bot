@@ -18,7 +18,8 @@ async function fn () {
     await page.goto(process.env.VT_PRO_TIMESHEET_URL);
     await page.waitForTimeout(2000);
 
-    const oiToRegister = input.question('OI: ');
+    let oiToRegister = input.question('OI: ');
+    oiToRegister = oiToRegister.toUpperCase().trim();
 
     // seleciona OI
     await page.click('#ctl00_cphPrincipal_ddlAlocacaoRecurso');
